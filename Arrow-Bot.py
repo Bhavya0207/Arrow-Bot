@@ -137,8 +137,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('goelbhavya2007@gmail.com', 'bhavyagoel2007')
-    server.sendmail('goelbhavya2007@gmail.com', to, content)
+    server.login('email', 'password')
+    server.sendmail('email', to, content)
     server.close()
 
 class notes:
@@ -205,7 +205,7 @@ def searchstr(str,operations):
 def sendmail():
     try:
         content = ans
-        to = "bhavyagoel2july@gmail.com"    
+        to = "email1"    
         sendEmail(to, content)
         speak("Email has been sent!")
     except Exception as e:
