@@ -321,7 +321,10 @@ def main(query):
             voiceid=1
             voice='female'
         engine.setProperty('voice', voices[voiceid].id)
-        speak(f'voice changed to {voice}')        
+        speak(f'voice changed to {voice}')     
+        
+    elif 'full form' in query:
+        speak("ARROW stands for A Rather Resiliant Other Worldy-intelligence")   
     
     else:
         speak('Sorry, I did not get that')
