@@ -1,6 +1,4 @@
-#pyinstaller ./Arrow-Bot.py --onefile --noconsole --add-binary "./images/mic.png;./images" --add-binary "./images/enter.png;./images" --add-binary "./images/arrow.png;./images"--add-binary "./images\logo.png;./images" --add-binary "./images/Notes.txt;./images"
-
-
+#pyinstaller ./Arrow-Bot.py --onefile --noconsole --add-binary "./images/mic.png;./images" --add-binary "./images/enter.png;./images" --add-binary "./images/arrow.png;./images" --add-binary "./images/logo.png;./images" --add-binary "./images/Notes.txt;./images --icon=images/logo1.ico"   
 import pyttsx3 
 import speech_recognition as sr     
 import datetime
@@ -137,8 +135,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('email', 'password')
-    server.sendmail('email', to, content)
+    server.login('goelbhavya2007@gmail.com', 'bhavyagoel2007')
+    server.sendmail('goelbhavya2007@gmail.com', to, content)
     server.close()
 
 class notes:
@@ -180,7 +178,8 @@ def appendnote():
     try:
         notes().append(note)
         speak('Note added successfully')
-    except:
+    except Exception as e:
+        print(e)
         speak('Failed to add note') 
 
 def playvid():
@@ -205,7 +204,7 @@ def searchstr(str,operations):
 def sendmail():
     try:
         content = ans
-        to = "email1"    
+        to = "bhavyagoel2july@gmail.com"    
         sendEmail(to, content)
         speak("Email has been sent!")
     except Exception as e:
@@ -323,8 +322,8 @@ def main(query):
         engine.setProperty('voice', voices[voiceid].id)
         speak(f'voice changed to {voice}')     
         
-    elif 'full form' in query:
-        speak("ARROW stands for A Rather Resiliant Other Worldy-intelligence")   
+    elif 'full form' in query or 'stands for' in query:
+        speak("ARROW stands for 'A Rather Resiliant Other Worldy-intelligence', and accuracy too")   
     
     else:
         speak('Sorry, I did not get that')
