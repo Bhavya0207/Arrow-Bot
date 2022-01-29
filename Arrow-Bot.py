@@ -359,6 +359,7 @@ root.configure(borderwidth="1")
 root.configure(relief="sunken")
 root.configure(highlightbackground="white")
 root.configure(highlightcolor="white")
+root.resizable(False,False)
 
 photoPath=resource_path("images/logo.png")
 p1 = PhotoImage(file = photoPath)
